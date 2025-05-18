@@ -301,13 +301,26 @@
       </div>
     </div>
 
-    <div id="about-section" class="about-section">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <img src="./images/aboutme.jpg" alt="Your Photo" class="about-photo">
-        <p>I’m a web designer passionate about minimalism and clean coding using HTML, CSS, and JavaScript. This site is a learning space and digital playground.</p>
-      </div>
+    <div id="about-section" class="about-section" style="display: none;">
+  <h2>About Me</h2>
+  <div class="about-content" style="justify-content: center; flex-direction: column; text-align: center;">
+    <img src="./images/aboutme.jpg" alt="Your Photo" class="about-photo" style="margin: 0 auto;">
+    <p style="max-width: 700px; margin: 20px auto;">
+      I’m a web designer who loves minimalism and writing clean, simple code using HTML, CSS, and JavaScript.
+      This site is my space to learn, experiment, and build projects that help me grow. I believe in keeping things clear and straightforward,
+      both in design and code. Besides web design, I’m really into music and fashion — they inspire my creativity and influence how I approach
+      my work and style. I enjoy exploring how different sounds and looks can shape ideas and energy in everything I create.
+    </p>
+    <div style="margin-top: 20px;">
+      <a href="https://instagram.com/YOUR_USERNAME" target="_blank">
+        <button>Instagram</button>
+      </a>
+      <a href="https://facebook.com/YOUR_USERNAME" target="_blank">
+        <button>Facebook</button>
+      </a>
     </div>
+  </div>
+</div>
 
     <div id="contact-section" class="contact-section">
       <h2>Contact</h2>
@@ -387,64 +400,237 @@
     }
   </style>
 
-  <h2>My Space</h2>
-  <p>A personal space to keep track of favorites, memories, and learning.</p>
+<style>
+  /* Container flex setup */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-  <div style="display: flex; flex-wrap: wrap; gap: 40px; max-width: 1000px; margin: auto;">
-    <!-- Left Column -->
-    <div style="flex: 1 1 300px; min-width: 280px;">
-      <div class="html-topics">
-        <h3>Favorite Brands</h3>
-        <ul class="html-links">
-          <li><a href="#">Chrome Hearts</a></li>
-          <li><a href="#">Balenciaga</a></li>
-        </ul>
-      </div>
+  /* Card style for each section */
+  .hover-box {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px; /* increased padding */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    flex: 1 1 350px; /* increased min width */
+    min-width: 340px;
+  }
 
-      <div class="html-topics" style="margin-top: 30px;">
-        <h3>Wishlist</h3>
-        <ul class="html-links">
-          <li class="wishlist-item">
-            <img src="https://i.redd.it/wstj2w8q9skc1.jpeg" alt="Raver Jeans" />
-            <a href="#">Raver Jeans</a>
-          </li>
-          <li class="wishlist-item">
-            <img src="https://i.redd.it/smc1dlzv6ihb1.jpg" alt="Timberlands x Chrome Hearts Collab" />
-            <a href="#">Timberlands x Chrome Hearts Collab</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  /* Hover effect on section card */
+  .hover-box:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
 
-    <!-- Right Column -->
-    <div style="flex: 1 1 300px; min-width: 280px;">
-      <div class="html-topics">
-        <h3>Concerts I've Been To</h3>
-        <ul class="html-links">
-          <li class="wishlist-item">
-            <img src="https://cdn.prgloo.com/media/ce75a7b3b3eb456c9a682759a1a44028.jpg?width=442&height=663" alt="Brent Faiyaz" />
-            <a href="#">Brent Faiyaz - Wasteland Tour (January 2024)</a>
-          </li>
-        </ul>
-      </div>
+  /* List style */
+  ul.html-links {
+    list-style: none;
+    padding-left: 0;
+  }
 
-      <div class="html-topics" style="margin-top: 30px;">
-        <h3>Upcoming Concerts</h3>
-        <ul class="html-links">
-          <li class="wishlist-item">
-            <img src="https://scontent.fmnl37-1.fna.fbcdn.net/v/t39.30808-6/486340839_1087174943455704_3837771894887164858_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFbwd2GRiy2Nmmy3QIyk-BQvl7-PKE413S-Xv48oTjXdO2aL8lsmEsah2rkkHDnxu1ZinRf03RT_wJNv80k02Ph&_nc_ohc=ROd_QJ5lXLUQ7kNvwFatOve&_nc_oc=AdlZ8iqUMtW71BquwTRtmQz2EXy-c9f9mhovHGR5ditMgAcT_ZZCZ5Hyvb-MJ-ckhoI&_nc_zt=23&_nc_ht=scontent.fmnl37-1.fna&_nc_gid=mUjdHgWqu_NgqTCEHj53jw&oh=00_AfI4vhaqrGJDcXfrGBiyh2h6ZpynbQfqWXGWGWifRUVEsA&oe=682F2F2E" alt="Tyler The Creator" />
-            <a href="#">Chromakopia - Tyler, The Creator Tour (September 2025)</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  ul.html-links li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Images inside list items */
+  ul.html-links li img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 12px;
+    cursor: pointer;
+    /* Removed hover shadow and scale on images */
+    transition: none;
+  }
+
+  /* Wishlist & concerts images same bigger size */
+  .wishlist-item img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Modal styles for zoom */
+  #img-modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #img-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #fff;
+  }
+
+  /* Close area */
+  #img-modal.close-area {
+    cursor: pointer;
+  }
+</style>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .hover-box {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 60px;        /* bigger padding */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    flex: 1 1 460px;      /* bigger min-width */
+    min-width: 440px;
+  }
+
+  .hover-box:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+
+  ul.html-links {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul.html-links li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  ul.html-links li img {
+    width: 180px;          /* 2x bigger images */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 24px;
+    cursor: pointer;
+    transition: none;
+  }
+
+  /* Modal styles for zoom */
+  #img-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #img-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #fff;
+  }
+
+  #img-modal.close-area {
+    cursor: pointer;
+  }
+</style>
+
+<h2>My Space</h2>
+<p>A personal space to keep track of favorites, memories, and learning.</p>
+
+<div class="container">
+  <!-- Left Column -->
+
+  <div class="hover-box">
+    <h3>Favorite Brands</h3>
+    <ul class="html-links">
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Chrome_Hearts_logo.svg/2560px-Chrome_Hearts_logo.svg.png" alt="Chrome Hearts" class="zoomable" />
+        <a href="#">Chrome Hearts</a>
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Balenciaga-Logo.svg/2560px-Balenciaga-Logo.svg.png" alt="Balenciaga" class="zoomable" />
+        <a href="#">Balenciaga</a>
+      </li>
+    </ul>
   </div>
 
-  <div class="html-topics" style="margin-top: 30px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-    <h3>Personal Notes</h3>
-    <textarea placeholder="Write your thoughts..." rows="6" style="width: 100%;"></textarea>
+  <div class="hover-box" style="margin-top: 0;">
+    <h3>Wishlist</h3>
+    <ul class="html-links">
+      <li class="wishlist-item">
+        <img src="https://i.redd.it/wstj2w8q9skc1.jpeg" alt="Raver Jeans" class="zoomable" />
+        <a href="#">Raver Jeans</a>
+      </li>
+      <li class="wishlist-item">
+        <img src="https://i.redd.it/smc1dlzv6ihb1.jpg" alt="Timberlands x Chrome Hearts Collab" class="zoomable" />
+        <a href="#">Timberlands x Chrome Hearts Collab</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Right Column -->
+
+  <div class="hover-box">
+    <h3>Concerts I've Been To</h3>
+    <ul class="html-links">
+      <li class="wishlist-item">
+        <img src="https://cdn.prgloo.com/media/ce75a7b3b3eb456c9a682759a1a44028.jpg?width=442&height=663" alt="Brent Faiyaz" class="zoomable" />
+        <a href="#">Brent Faiyaz - Wasteland Tour (January 2024)</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="hover-box" style="margin-top: 0;">
+    <h3>Upcoming Concerts</h3>
+    <ul class="html-links">
+      <li class="wishlist-item">
+        <img src="https://scontent.fmnl37-1.fna.fbcdn.net/v/t39.30808-6/486340839_1087174943455704_3837771894887164858_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFbwd2GRiy2Nmmy3QIyk-BQvl7-PKE413S-Xv48oTjXdO2aL8lsmEsah2rkkHDnxu1ZinRf03RT_wJNv80k02Ph&_nc_ohc=ROd_QJ5lXLUQ7kNvwFatOve&_nc_oc=AdlZ8iqUMtW71BquwTRtmQz2EXy-c9f9mhovHGR5ditMgAcT_ZZCZ5Hyvb-MJ-ckhoI&_nc_zt=23&_nc_ht=scontent.fmnl37-1.fna&_nc_gid=mUjdHgWqu_NgqTCEHj53jw&oh=00_AfI4vhaqrGJDcXfrGBiyh2h6ZpynbQfqWXGWGWifRUVEsA&oe=682F2F2E" alt="Tyler The Creator" class="zoomable" />
+        <a href="#">Chromakopia - Tyler, The Creator Tour (September 2025)</a>
+      </li>
+    </ul>
   </div>
 </div>
+
+<!-- Modal container -->
+<div id="img-modal" class="close-area">
+  <img src="" alt="Zoomed image" />
+</div>
+
+<script>
+  const modal = document.getElementById('img-modal');
+  const modalImg = modal.querySelector('img');
+
+  document.querySelectorAll('img.zoomable').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modalImg.alt = '';
+  });
+</script>
 
   <footer>
     &copy; 2025 Francisco
